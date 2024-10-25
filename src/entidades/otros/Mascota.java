@@ -24,4 +24,41 @@ public class Mascota {
         this.dueño = dueño;
         historialClinico = new LinkedList<>();
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDueño(Dueño dueño) {
+        this.dueño = dueño;
+    }
+
+    public void añadirCita(Cita cita) {
+        this.historialClinico.add(cita);
+    }
+
+    public String getNumeroExpediente() {
+        return numeroExpediente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public LocalDate getNacimiento() {
+        return nacimiento;
+    }
+
+    public Dueño getDueño() {
+        return dueño;
+    }
+
+    public List<Cita> getHistorialClinico() {
+        return historialClinico;
+    }
+
 }

@@ -10,4 +10,16 @@ public class Persona {
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidoP() {
+        return apellidoP;
+    }
+
+    public String getApellidoM() {
+        return apellidoM;
+    }
 }

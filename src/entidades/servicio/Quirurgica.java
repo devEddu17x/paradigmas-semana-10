@@ -20,4 +20,24 @@ public class Quirurgica extends Cita {
         this.instruccionesPostOperatorias = instruccionesPostOperatorias;
     }
 
+    public String getInstruccionesPreOperatorias() {
+        return instruccionesPreOperatorias;
+    }
+
+    public void setInstruccionesPreOperatorias(String instruccionesPreOperatorias) {
+        this.instruccionesPreOperatorias = instruccionesPreOperatorias;
+    }
+
+    public String getInstruccionesPostOperatorias() {
+        return instruccionesPostOperatorias;
+    }
+
+    public void setInstruccionesPostOperatorias(String instruccionesPostOperatorias) {
+        this.instruccionesPostOperatorias = instruccionesPostOperatorias;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
 }

@@ -18,4 +18,33 @@ public class Dueño extends Persona {
         this.direccion = direccion;
         mascotas = new LinkedList<>();
     }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void añadirMascotas(Mascota mascota) {
+        this.mascotas.add(mascota);
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public List<Mascota> getMascotas() {
+        return mascotas;
+    }
+
 }

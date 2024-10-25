@@ -34,4 +34,60 @@ public class Cita {
         this.productosUsados = productosUsados;
     }
 
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public void setCondicion(String condicion) {
+        this.condicion = condicion;
+    }
+
+    public void setTratamiento(String tratamiento) {
+        this.tratamiento = tratamiento;
+    }
+
+    public void setProductosUsados(Map<Producto, Integer> productosUsados) {
+        this.productosUsados = productosUsados;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public String getCondicion() {
+        return condicion;
+    }
+
+    public double getTemperatura() {
+        return temperatura;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public double getTalla() {
+        return talla;
+    }
+
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public String getTratamiento() {
+        return tratamiento;
+    }
+
+    public Mascota getMascota() {
+        return mascota;
+    }
+
+    public Map<Producto, Integer> getProductosUsados() {
+        return productosUsados;
+    }
+
 }

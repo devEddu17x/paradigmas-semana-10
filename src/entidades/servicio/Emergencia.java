@@ -16,4 +16,12 @@ public class Emergencia extends Cita {
         this.procedimientosAdicionales = procedimientosAdicionales;
     }
 
+    public void setProcedimientosAdicionales(String procedimientosAdicionales) {
+        this.procedimientosAdicionales = procedimientosAdicionales;
+    }
+
+    public String getProcedimientosAdicionales() {
+        return procedimientosAdicionales;
+    }
+
 }
