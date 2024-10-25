@@ -4,4 +4,4 @@ Repositorio con diagrama de clases e implementacion sin metodos de las clases de
 
 ## Diagrama
 
-![alt text](image.png)
+![alt text](docs/image.png)
