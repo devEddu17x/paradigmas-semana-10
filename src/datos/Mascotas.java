@@ -8,9 +8,9 @@ import java.util.Optional;
 
 public class Mascotas {
 
-    private static Map<Integer, Mascota> mascotas = new HashMap<>();
+    private Map<Integer, Mascota> mascotas = new HashMap<>();
 
-    public static Mascota getMascotaNumeroExpediente(int expediente) {
+    public Mascota getMascotaNumeroExpediente(int expediente) {
         Mascota mascotaExpediente = mascotas.get(expediente);
         if (mascotaExpediente == null) {
             throw new NoSuchElementException("No se ha encontrado a una mascota con el expediente: " + expediente);
@@ -18,7 +18,7 @@ public class Mascotas {
         return mascotaExpediente;
     }
 
-    public static Mascota getMascotaDueño(String dni) {
+    public Mascota getMascotaDueño(String dni) {
         Optional<Mascota> mascotaDueño = mascotas.values().stream().filter(mascota -> mascota.getDueño().getDni().equals(dni)).findFirst();
 
         if (mascotaDueño.isEmpty()) {
