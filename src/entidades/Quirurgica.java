@@ -1,12 +1,10 @@
-package entidades.servicio;
+package entidades;
 
 import java.time.LocalTime;
 import java.util.HashMap;
 
-import entidades.otros.Mascota;
-import entidades.otros.Producto;
-
 public class Quirurgica extends Cita {
+
     private String instruccionesPreOperatorias;
     private String instruccionesPostOperatorias;
     private LocalTime hora;

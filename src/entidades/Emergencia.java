@@ -1,12 +1,9 @@
-package entidades.servicio;
+package entidades;
 
-import java.time.LocalTime;
 import java.util.HashMap;
 
-import entidades.otros.Mascota;
-import entidades.otros.Producto;
-
 public class Emergencia extends Cita {
+
     private String procedimientosAdicionales;
 
     public Emergencia(String motivo, String condicion, double temperatura, double peso, double talla,

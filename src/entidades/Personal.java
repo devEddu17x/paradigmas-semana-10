@@ -1,9 +1,10 @@
-package entidades.usuarios;
+package entidades;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Personal {
+
     private String cargo;
     private List<String> tareas;
     private String horario;

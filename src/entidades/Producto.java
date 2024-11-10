@@ -1,4 +1,4 @@
-package entidades.otros;
+package entidades;
 
 public class Producto {
 

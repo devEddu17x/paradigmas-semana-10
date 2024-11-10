@@ -1,6 +1,7 @@
-package entidades.usuarios;
+package entidades;
 
 public class Persona {
+
     private String nombre;
     private String apellidoP;
     private String apellidoM;

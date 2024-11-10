@@ -1,14 +1,13 @@
-package entidades.otros;
+package entidades;
 
 import java.time.LocalDate;
-import java.util.UUID;
-import java.util.List;
 import java.util.LinkedList;
-import entidades.servicio.Cita;
-import entidades.usuarios.Dueño;
+import java.util.List;
+import java.util.UUID;
 
 public class Mascota {
-    private String numeroExpediente;
+
+    private int numeroExpediente;
     private String nombre;
     private String especie;
     private LocalDate nacimiento; // para no necesitar actualizar la edad, solo calcularla
@@ -17,7 +16,7 @@ public class Mascota {
     private List<Cita> historialClinico;
 
     public Mascota(String nombre, String especie, LocalDate nacimiento, Dueño dueño) {
-        this.numeroExpediente = UUID.randomUUID().getMostSignificantBits() + "";
+        this.numeroExpediente = (int) UUID.randomUUID().getMostSignificantBits();
         this.nombre = nombre;
         this.especie = especie;
         this.nacimiento = nacimiento;
@@ -37,7 +36,7 @@ public class Mascota {
         this.historialClinico.add(cita);
     }
 
-    public String getNumeroExpediente() {
+    public int getNumeroExpediente() {
         return numeroExpediente;
     }
 

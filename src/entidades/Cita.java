@@ -1,10 +1,9 @@
-package entidades.servicio;
+package entidades;
 
 import java.time.LocalDate;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
-import entidades.otros.Mascota;
-import entidades.otros.Producto;
+import java.util.Map;
 
 public class Cita {
 
@@ -19,6 +18,7 @@ public class Cita {
 
     private Mascota mascota;
     private Map<Producto, Integer> productosUsados;
+    private ArrayList<Personal> personal;
 
     public Cita(String motivo, String condicion, double temperatura, double peso, double talla, String diagnostico,
             String tratamiento, Mascota mascota, HashMap<Producto, Integer> productosUsados) {

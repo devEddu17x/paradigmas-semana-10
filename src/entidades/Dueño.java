@@ -1,10 +1,10 @@
-package entidades.usuarios;
+package entidades;
 
 import java.util.LinkedList;
 import java.util.List;
-import entidades.otros.Mascota;
 
 public class Dueño extends Persona {
+
     private String dni;
     private String telefono;
     private String direccion;
