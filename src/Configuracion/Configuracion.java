@@ -2,6 +2,6 @@ package Configuracion;
 
 public class Configuracion {
 
-    static final String usuario = "eddu";
-    static final String password = "linux";
+    public static final int LARGO_PANEL = 790;
+    public static final int ANCHO_PANEL = 630;
 }
