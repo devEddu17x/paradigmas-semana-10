@@ -219,7 +219,7 @@ public class UIDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
+    /*    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -227,7 +227,7 @@ public class UIDashboard extends javax.swing.JFrame {
             }
         });
     }
-
+     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Mascotas;
     private javax.swing.JLabel Mascotas1;

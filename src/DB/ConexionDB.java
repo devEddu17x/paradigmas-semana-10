@@ -4,6 +4,8 @@ import datos.Mascotas;
 import datos.Productos;
 import datos.Servicios;
 import datos.Usuarios;
+import entidades.Dueño;
+import entidades.Mascota;
 
 public class ConexionDB {
 
@@ -39,5 +41,13 @@ public class ConexionDB {
 
     public UsuarioSys getUsuario(String nombre) {
         return usuariosSys.getUsuario(nombre);
+    }
+
+    public void insertarMascota(Mascota mascota) {
+        mascotas.añadirMascota(mascota);
+    }
+
+    public Dueño getDueñoDNI(String dni) {
+        return usuarios.getDueño(dni);
     }
 }
