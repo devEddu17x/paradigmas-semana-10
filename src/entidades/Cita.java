@@ -1,13 +1,17 @@
 package entidades;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class Cita {
 
+    private int id;
     private LocalDate fecha;
+
     private String motivo;
     private String condicion;
     private double temperatura;
@@ -18,10 +22,12 @@ public class Cita {
 
     private Mascota mascota;
     private Map<Producto, Integer> productosUsados;
-    private ArrayList<Personal> personal;
+    private List<Personal> personal = new LinkedList<>();
 
     public Cita(String motivo, String condicion, double temperatura, double peso, double talla, String diagnostico,
             String tratamiento, Mascota mascota, HashMap<Producto, Integer> productosUsados) {
+
+        this.id = new Random().nextInt(9000) + 1000;
         this.fecha = LocalDate.now();
         this.motivo = motivo;
         this.condicion = condicion;
@@ -32,6 +38,18 @@ public class Cita {
         this.tratamiento = tratamiento;
         this.mascota = mascota;
         this.productosUsados = productosUsados;
+    }
+
+    public void setPersonal(List<Personal> personal) {
+        this.personal = personal;
+    }
+
+    public List<Personal> getPersonal() {
+        return personal;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setMotivo(String motivo) {
@@ -46,7 +64,7 @@ public class Cita {
         this.tratamiento = tratamiento;
     }
 
-    public void setProductosUsados(Map<Producto, Integer> productosUsados) {
+    public void añadirProducto(Map<Producto, Integer> productosUsados) {
         this.productosUsados = productosUsados;
     }
 

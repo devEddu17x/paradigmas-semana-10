@@ -47,7 +47,7 @@ public class UIAñadirMascota extends javax.swing.JFrame {
         btnAñadir = new javax.swing.JButton();
         jblResultado = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
         setPreferredSize(new java.awt.Dimension(380, 630));
         setResizable(false);
@@ -132,6 +132,11 @@ public class UIAñadirMascota extends javax.swing.JFrame {
 
         btnAñadir.setFont(new java.awt.Font("Fira Code", 0, 14)); // NOI18N
         btnAñadir.setText("Añadir");
+        btnAñadir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAñadirMouseClicked(evt);
+            }
+        });
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAñadirActionPerformed(evt);
@@ -257,6 +262,10 @@ public class UIAñadirMascota extends javax.swing.JFrame {
         tfEspecie.requestFocus();
         tfEspecie.setText("");
     }//GEN-LAST:event_tfNombreActionPerformed
+
+    private void btnAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAñadirMouseClicked
 
     /**
      * @param args the command line arguments

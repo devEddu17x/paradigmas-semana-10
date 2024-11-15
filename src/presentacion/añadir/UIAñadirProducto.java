@@ -33,7 +33,7 @@ public class UIAñadirProducto extends javax.swing.JFrame {
         tfStock = new javax.swing.JTextField();
         cmbCategoria = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
         setResizable(false);
 

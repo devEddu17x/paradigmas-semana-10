@@ -65,4 +65,13 @@ public class UsuariosControlador {
         List<Personal> p = conexion.getPersonalCargo(cargo);
         return p;
     }
+
+    public static Personal getPersonal(String nombre, String apellido) {
+        if (nombre.equals("") || apellido.equals("")) {
+            return null;
+        }
+
+        conexion = ConexionDB.getInstance();
+        return conexion.getPersonal(nombre, apellido);
+    }
 }

@@ -1,13 +1,16 @@
 package DB;
 
+import datos.Citas;
 import datos.Mascotas;
 import datos.Productos;
-import datos.Servicios;
 import datos.Usuarios;
+import entidades.Cita;
 import entidades.Dueño;
+import entidades.Emergencia;
 import entidades.Mascota;
 import entidades.Personal;
 import entidades.Producto;
+import entidades.Quirurgica;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -21,9 +24,9 @@ public class ConexionDB {
     private UsuariosSys usuariosSys;
 
     // simulacion de base de datos
-    private Mascotas mascotas; // mascotas 
+    private Mascotas mascotas; // mascotas
     private Productos productos; // productos xd
-    private Servicios servicios; // los 3 tipos de cita
+    private Citas citas; // los 3 tipos de cita
     private Usuarios usuarios; // clientes y personal
 
     private ConexionDB() {
@@ -31,12 +34,12 @@ public class ConexionDB {
 
         mascotas = new Mascotas();
         productos = new Productos();
-        servicios = new Servicios();
         usuarios = new Usuarios();
+        citas = new Citas();
     }
 
     ;
-    
+
     public static ConexionDB getInstance() {
         if (conexion == null) {
             conexion = new ConexionDB();
@@ -65,6 +68,10 @@ public class ConexionDB {
         return mascotas.getMascotas();
     }
 
+    public Mascota getMascota(int numero) {
+        return mascotas.getMascotaNumeroExpediente(numero);
+    }
+
     public void insertarDueño(Dueño dueño) {
         usuarios.insertarDueño(dueño);
     }
@@ -91,5 +98,29 @@ public class ConexionDB {
 
     public List<Personal> getPersonalCargo(String cargo) {
         return usuarios.getPersonalCargo(cargo);
+    }
+
+    public void insertarCita(Cita cita) {
+        citas.insertarCita(cita);
+    }
+
+    public List<Cita> getCitas() {
+        return citas.getCitas();
+    }
+
+    public Cita getCita(int id) {
+        return citas.getCita(id);
+    }
+
+    public List<Quirurgica> getCitasQuirurgicas() {
+        return citas.getCitasQuirurgicas();
+    }
+
+    public List<Emergencia> getCitasEmergencias() {
+        return citas.getCitasEmergencias();
+    }
+
+    public Personal getPersonal(String nombre, String apellido) {
+        return usuarios.getPersonal(nombre, apellido);
     }
 }

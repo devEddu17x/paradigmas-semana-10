@@ -3,7 +3,7 @@ package entidades;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
+import java.util.Random;
 
 public class Mascota {
 
@@ -16,7 +16,7 @@ public class Mascota {
     private List<Cita> historialClinico;
 
     public Mascota(String nombre, String especie, LocalDate nacimiento, Dueño dueño) {
-        this.numeroExpediente = (int) UUID.randomUUID().getMostSignificantBits();
+        this.numeroExpediente = new Random().nextInt(9000) + 1000;
         this.nombre = nombre;
         this.especie = especie;
         this.nacimiento = nacimiento;

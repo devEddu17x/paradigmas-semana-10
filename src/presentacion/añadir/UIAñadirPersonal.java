@@ -11,10 +11,10 @@ import control.UsuariosControlador;
  * @author edu
  */
 public class UIAñadirPersonal extends javax.swing.JFrame {
-    
+
     public UIAñadirPersonal() {
         initComponents();
-        
+
     }
 
     /**
@@ -34,7 +34,7 @@ public class UIAñadirPersonal extends javax.swing.JFrame {
         cmbCargo = new javax.swing.JComboBox<>();
         tfPaterno = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
         setResizable(false);
 
@@ -198,25 +198,25 @@ public class UIAñadirPersonal extends javax.swing.JFrame {
         tfNomina.requestFocus();
         tfNomina.setText("");
     }//GEN-LAST:event_tfHorarioActionPerformed
-    
+
     private void tfMaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaternoActionPerformed
-        
+
     }//GEN-LAST:event_tfMaternoActionPerformed
-    
+
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        
+
     }//GEN-LAST:event_btnAñadirActionPerformed
-    
+
     private void tfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreActionPerformed
         tfPaterno.requestFocus();
         tfPaterno.setText("");
     }//GEN-LAST:event_tfNombreActionPerformed
-    
+
     private void tfNominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNominaActionPerformed
         tfHorario.requestFocus();
         tfHorario.setText("");
     }//GEN-LAST:event_tfNominaActionPerformed
-    
+
     private void btnAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirMouseClicked
         boolean exito = UsuariosControlador.insertarPersonal(cmbCargo.getItemAt(cmbCargo.getSelectedIndex()), tfHorario.getText(), tfNomina.getText(), tfNombre.getText(), tfPaterno.getText(), tfMaterno.getText());
         if (exito) {
@@ -226,20 +226,20 @@ public class UIAñadirPersonal extends javax.swing.JFrame {
             jblResultado.setText("No se pudo añadir el personal");
         }
     }//GEN-LAST:event_btnAñadirMouseClicked
-    
+
     private void tfMaternoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfMaternoMouseClicked
         tfMaterno.setText("");
     }//GEN-LAST:event_tfMaternoMouseClicked
-    
+
     private void tfPaternoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPaternoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPaternoMouseClicked
-    
+
     private void tfPaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPaternoActionPerformed
         tfMaterno.requestFocus();
         tfMaterno.setText("");
     }//GEN-LAST:event_tfPaternoActionPerformed
-    
+
     private void tfNominaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfNominaMouseClicked
         tfNomina.setText("");
     }//GEN-LAST:event_tfNominaMouseClicked

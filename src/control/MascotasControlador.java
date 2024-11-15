@@ -34,6 +34,23 @@ public class MascotasControlador {
         return true;
     }
 
+    public static Mascota getMascotaNumeroExp(String numero) {
+        int expediente = -1;
+        try {
+            expediente = Integer.parseInt(numero);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error al parsear numero de expediente:");
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+        if (expediente <= 0) {
+            return null;
+        }
+        return conexion.getMascota(expediente);
+    }
+
     public static List<Mascota> getMascotas() {
         conexion = ConexionDB.getInstance();
         List<Mascota> lista = List.copyOf(conexion.getMascotas().values());

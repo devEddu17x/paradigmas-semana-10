@@ -69,6 +69,17 @@ public class UIDashboard extends javax.swing.JFrame {
         panelContenido.setVisible(true);
     }
 
+    private void setPanelCitas() {
+        PanelCitas panelCitas = new PanelCitas();
+        panelCitas.setSize(Configuracion.HORIZONTAL_PANEL, Configuracion.ALTURA_PANEL);
+        panelCitas.setLocation(0, 0);
+        panelContenido.removeAll();
+        panelContenido.add(panelCitas, BorderLayout.CENTER);
+        panelContenido.revalidate();
+        panelContenido.repaint();
+        panelContenido.setVisible(true);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,7 +95,7 @@ public class UIDashboard extends javax.swing.JFrame {
         Personal = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Dueños = new javax.swing.JLabel();
-        Mascotas2 = new javax.swing.JLabel();
+        citas = new javax.swing.JLabel();
         Mascotas3 = new javax.swing.JLabel();
         Productos = new javax.swing.JLabel();
         panelContenido = new javax.swing.JPanel();
@@ -143,17 +154,22 @@ public class UIDashboard extends javax.swing.JFrame {
             }
         });
 
-        Mascotas2.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
-        Mascotas2.setForeground(new java.awt.Color(187, 187, 186));
-        Mascotas2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Mascotas2.setText("Citas");
-        Mascotas2.setToolTipText("");
-        Mascotas2.setAlignmentX(0.5F);
-        Mascotas2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Mascotas2.setEnabled(false);
-        Mascotas2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Mascotas2.setPreferredSize(new java.awt.Dimension(79, 46));
-        Mascotas2.setRequestFocusEnabled(false);
+        citas.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
+        citas.setForeground(new java.awt.Color(187, 187, 186));
+        citas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        citas.setText("Citas");
+        citas.setToolTipText("");
+        citas.setAlignmentX(0.5F);
+        citas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        citas.setEnabled(false);
+        citas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        citas.setPreferredSize(new java.awt.Dimension(79, 46));
+        citas.setRequestFocusEnabled(false);
+        citas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                citasMouseClicked(evt);
+            }
+        });
 
         Mascotas3.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
         Mascotas3.setForeground(new java.awt.Color(187, 187, 186));
@@ -198,7 +214,7 @@ public class UIDashboard extends javax.swing.JFrame {
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Mascotas3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Dueños, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Mascotas2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(citas, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Personal, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelMenuLayout.createSequentialGroup()
@@ -216,7 +232,7 @@ public class UIDashboard extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(Dueños, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(Mascotas2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(citas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
@@ -288,6 +304,10 @@ public class UIDashboard extends javax.swing.JFrame {
         setPanelPersonal();
     }//GEN-LAST:event_PersonalMouseClicked
 
+    private void citasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_citasMouseClicked
+        setPanelCitas();
+    }//GEN-LAST:event_citasMouseClicked
+
     /*    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
@@ -299,10 +319,10 @@ public class UIDashboard extends javax.swing.JFrame {
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Dueños;
-    private javax.swing.JLabel Mascotas2;
     private javax.swing.JLabel Mascotas3;
     private javax.swing.JLabel Personal;
     private javax.swing.JLabel Productos;
+    private javax.swing.JLabel citas;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jblFondo;
     private javax.swing.JPanel panelContenedor;

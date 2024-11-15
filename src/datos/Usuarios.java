@@ -15,6 +15,16 @@ public class Usuarios {
         // dueños
         usuarios.add(new Dueño("Eddu", "Mamani", "Azabache", "12345678", "+51 933460321", "G202"));
         usuarios.add(new Dueño("Elmer", "Moreno", "Agreda", "98799654", "+51 999999999", "G203"));
+        usuarios.add(new Dueño("Carlos", "Pérez", "Blanco", "12345679", "+51 933460322", "G204"));
+        usuarios.add(new Dueño("Ana", "García", "Negro", "98799655", "+51 933460323", "G205"));
+        usuarios.add(new Dueño("Luis", "Martínez", "Café", "12345680", "+51 933460324", "G206"));
+        usuarios.add(new Dueño("María", "López", "Gris", "98799656", "+51 933460325", "G207"));
+        usuarios.add(new Dueño("Javier", "Sánchez", "Rojo", "12345681", "+51 933460326", "G208"));
+        usuarios.add(new Dueño("Lucía", "Fernández", "Verde", "98799657", "+51 933460327", "G209"));
+        usuarios.add(new Dueño("Diego", "Ramírez", "Amarillo", "12345682", "+51 933460328", "G210"));
+        usuarios.add(new Dueño("Patricia", "Torres", "Azul", "98799658", "+51 933460329", "G211"));
+        usuarios.add(new Dueño("Fernando", "Hernández", "Naranja", "12345683", "+51 933460330", "G212"));
+        usuarios.add(new Dueño("Isabel", "Cruz", "Rosa", "98799659", "+51 933460331", "G213"));
         // personal
         usuarios.add(new Personal("Veterinario", "9:00 - 17:00", 3000.00, "Juan", "Pérez", "Gómez"));
         usuarios.add(new Personal("Veterinario", "10:00 - 18:00", 3200.00, "Ana", "López", "Martínez"));
@@ -76,5 +86,15 @@ public class Usuarios {
             }
         }
         return empleados;
+    }
+
+    public Personal getPersonal(String nombre, String apellido) {
+
+        for (Persona p : usuarios) {
+            if (p instanceof Personal personal && personal.getNombre().equals(nombre) && personal.getApellidoP().equals(apellido)) {
+                return personal;
+            }
+        }
+        return null;
     }
 }
