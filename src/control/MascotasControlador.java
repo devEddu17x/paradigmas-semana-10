@@ -5,6 +5,7 @@ import entidades.Dueño;
 import entidades.Mascota;
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class MascotasControlador {
 
@@ -13,7 +14,7 @@ public class MascotasControlador {
     public static boolean agregarMascota(String nombre, String especie, int dia, int mes, int año, Dueño dueño) {
         try {
             conexion = ConexionDB.getInstance();
-            LocalDate fechaNacimiento = LocalDate.of(dia, mes, año);
+            LocalDate fechaNacimiento = LocalDate.of(año, mes, dia);
             if (dueño == null) {
                 throw new IllegalArgumentException("El dueño es null");
             }
@@ -31,5 +32,11 @@ public class MascotasControlador {
             return false;
         }
         return true;
+    }
+
+    public static List<Mascota> getMascotas() {
+        conexion = ConexionDB.getInstance();
+        List<Mascota> lista = List.copyOf(conexion.getMascotas().values());
+        return lista;
     }
 }

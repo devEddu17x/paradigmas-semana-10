@@ -79,10 +79,10 @@
                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Mascotas3" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="Mascotas1" min="-2" pref="196" max="-2" attributes="0"/>
+                              <Component id="Dueños" min="-2" pref="196" max="-2" attributes="0"/>
                               <Component id="Mascotas2" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="Mascotas4" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="Mascotas" min="-2" pref="196" max="-2" attributes="0"/>
+                              <Component id="Productos" min="-2" pref="196" max="-2" attributes="0"/>
+                              <Component id="Personal" min="-2" pref="196" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" pref="170" max="-2" attributes="0"/>
@@ -100,20 +100,20 @@
                           <EmptySpace pref="59" max="32767" attributes="0"/>
                           <Component id="Mascotas3" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="Mascotas1" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="Dueños" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="Mascotas2" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="Mascotas4" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="Productos" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="Mascotas" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="Personal" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="Mascotas">
+                <Component class="javax.swing.JLabel" name="Personal">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Fira Code" size="24" style="0"/>
@@ -135,6 +135,9 @@
                     </Property>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PersonalMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -158,7 +161,7 @@
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="Mascotas1">
+                <Component class="javax.swing.JLabel" name="Due&#xf1;os">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Fira Code" size="24" style="0"/>
@@ -180,6 +183,9 @@
                     </Property>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Due&#xf1;osMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Mascotas2">
                   <Properties>
@@ -226,8 +232,11 @@
                     </Property>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Mascotas3MouseClicked"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="Mascotas4">
+                <Component class="javax.swing.JLabel" name="Productos">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Fira Code" size="24" style="0"/>
@@ -249,6 +258,9 @@
                     </Property>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ProductosMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

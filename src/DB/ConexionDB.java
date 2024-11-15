@@ -6,6 +6,11 @@ import datos.Servicios;
 import datos.Usuarios;
 import entidades.Dueño;
 import entidades.Mascota;
+import entidades.Personal;
+import entidades.Producto;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class ConexionDB {
 
@@ -34,7 +39,7 @@ public class ConexionDB {
     
     public static ConexionDB getInstance() {
         if (conexion == null) {
-            return new ConexionDB();
+            conexion = new ConexionDB();
         }
         return conexion;
     }
@@ -49,5 +54,42 @@ public class ConexionDB {
 
     public Dueño getDueñoDNI(String dni) {
         return usuarios.getDueño(dni);
+    }
+
+    public LinkedList<Dueño> getDueños() {
+        return usuarios.getDueños();
+    }
+
+    public Map<Integer, Mascota> getMascotas() {
+
+        return mascotas.getMascotas();
+    }
+
+    public void insertarDueño(Dueño dueño) {
+        usuarios.insertarDueño(dueño);
+    }
+
+    public Producto getProducto(String nombre) {
+        return productos.getProducto(nombre);
+    }
+
+    public List<Producto> getProductos() {
+        return productos.getProductos();
+    }
+
+    public void insertarProducto(Producto p) {
+        productos.insertarProducto(p);
+    }
+
+    public void insertarPersonal(Personal p) {
+        usuarios.insertarPersonal(p);
+    }
+
+    public List<Personal> getPersonal() {
+        return usuarios.getPersonal();
+    }
+
+    public List<Personal> getPersonalCargo(String cargo) {
+        return usuarios.getPersonalCargo(cargo);
     }
 }

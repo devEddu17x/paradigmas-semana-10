@@ -2,9 +2,9 @@ package Configuracion;
 
 public class Configuracion {
 
-    public static final int LARGO_PANEL = 790;
-    public static final int ANCHO_PANEL = 630;
-    public static final int LARGO_FRAME_AÑADIR = 630;
-    public static final int ANCHO_FRAME_AÑADIR = 500;
+    public static final int HORIZONTAL_PANEL = 790;
+    public static final int ALTURA_PANEL = 630;
+    public static final int AÑADIR_LARGO = 640;
+    public static final int AÑADIR_ANCHO = 380;
 
 }

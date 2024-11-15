@@ -27,10 +27,43 @@ public class UIDashboard extends javax.swing.JFrame {
 
     private void setPanelMascotas() {
         PanelMascotas panelMascotas = new PanelMascotas();
-        panelMascotas.setSize(Configuracion.LARGO_PANEL, Configuracion.ANCHO_PANEL);
+        panelMascotas.setSize(Configuracion.HORIZONTAL_PANEL, Configuracion.ALTURA_PANEL);
         panelMascotas.setLocation(0, 0);
         panelContenido.removeAll();
         panelContenido.add(panelMascotas, BorderLayout.CENTER);
+        panelContenido.revalidate();
+        panelContenido.repaint();
+        panelContenido.setVisible(true);
+    }
+
+    private void setPanelDueños() {
+        PanelDueños panelDueños = new PanelDueños();
+        panelDueños.setSize(Configuracion.HORIZONTAL_PANEL, Configuracion.ALTURA_PANEL);
+        panelDueños.setLocation(0, 0);
+        panelContenido.removeAll();
+        panelContenido.add(panelDueños, BorderLayout.CENTER);
+        panelContenido.revalidate();
+        panelContenido.repaint();
+        panelContenido.setVisible(true);
+    }
+
+    private void setPanelProductos() {
+        PanelProductos panelProductos = new PanelProductos();
+        panelProductos.setSize(Configuracion.HORIZONTAL_PANEL, Configuracion.ALTURA_PANEL);
+        panelProductos.setLocation(0, 0);
+        panelContenido.removeAll();
+        panelContenido.add(panelProductos, BorderLayout.CENTER);
+        panelContenido.revalidate();
+        panelContenido.repaint();
+        panelContenido.setVisible(true);
+    }
+
+    private void setPanelPersonal() {
+        PanelPersonal panelPersonal = new PanelPersonal();
+        panelPersonal.setSize(Configuracion.HORIZONTAL_PANEL, Configuracion.ALTURA_PANEL);
+        panelPersonal.setLocation(0, 0);
+        panelContenido.removeAll();
+        panelContenido.add(panelPersonal, BorderLayout.CENTER);
         panelContenido.revalidate();
         panelContenido.repaint();
         panelContenido.setVisible(true);
@@ -48,12 +81,12 @@ public class UIDashboard extends javax.swing.JFrame {
         panelContenedor = new javax.swing.JPanel();
         panelNoLayout = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
-        Mascotas = new javax.swing.JLabel();
+        Personal = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Mascotas1 = new javax.swing.JLabel();
+        Dueños = new javax.swing.JLabel();
         Mascotas2 = new javax.swing.JLabel();
         Mascotas3 = new javax.swing.JLabel();
-        Mascotas4 = new javax.swing.JLabel();
+        Productos = new javax.swing.JLabel();
         panelContenido = new javax.swing.JPanel();
         jblFondo = new javax.swing.JLabel();
 
@@ -65,17 +98,22 @@ public class UIDashboard extends javax.swing.JFrame {
 
         panelMenu.setBackground(new java.awt.Color(15, 15, 15));
 
-        Mascotas.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
-        Mascotas.setForeground(new java.awt.Color(187, 187, 186));
-        Mascotas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Mascotas.setText("Personal");
-        Mascotas.setToolTipText("");
-        Mascotas.setAlignmentX(0.5F);
-        Mascotas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Mascotas.setEnabled(false);
-        Mascotas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Mascotas.setPreferredSize(new java.awt.Dimension(79, 46));
-        Mascotas.setRequestFocusEnabled(false);
+        Personal.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
+        Personal.setForeground(new java.awt.Color(187, 187, 186));
+        Personal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Personal.setText("Personal");
+        Personal.setToolTipText("");
+        Personal.setAlignmentX(0.5F);
+        Personal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Personal.setEnabled(false);
+        Personal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Personal.setPreferredSize(new java.awt.Dimension(79, 46));
+        Personal.setRequestFocusEnabled(false);
+        Personal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PersonalMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(187, 187, 186));
@@ -88,17 +126,22 @@ public class UIDashboard extends javax.swing.JFrame {
         jLabel2.setPreferredSize(new java.awt.Dimension(79, 46));
         jLabel2.setRequestFocusEnabled(false);
 
-        Mascotas1.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
-        Mascotas1.setForeground(new java.awt.Color(187, 187, 186));
-        Mascotas1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Mascotas1.setText("Dueños");
-        Mascotas1.setToolTipText("");
-        Mascotas1.setAlignmentX(0.5F);
-        Mascotas1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Mascotas1.setEnabled(false);
-        Mascotas1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Mascotas1.setPreferredSize(new java.awt.Dimension(79, 46));
-        Mascotas1.setRequestFocusEnabled(false);
+        Dueños.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
+        Dueños.setForeground(new java.awt.Color(187, 187, 186));
+        Dueños.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Dueños.setText("Dueños");
+        Dueños.setToolTipText("");
+        Dueños.setAlignmentX(0.5F);
+        Dueños.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Dueños.setEnabled(false);
+        Dueños.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Dueños.setPreferredSize(new java.awt.Dimension(79, 46));
+        Dueños.setRequestFocusEnabled(false);
+        Dueños.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DueñosMouseClicked(evt);
+            }
+        });
 
         Mascotas2.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
         Mascotas2.setForeground(new java.awt.Color(187, 187, 186));
@@ -123,18 +166,28 @@ public class UIDashboard extends javax.swing.JFrame {
         Mascotas3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Mascotas3.setPreferredSize(new java.awt.Dimension(79, 46));
         Mascotas3.setRequestFocusEnabled(false);
+        Mascotas3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Mascotas3MouseClicked(evt);
+            }
+        });
 
-        Mascotas4.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
-        Mascotas4.setForeground(new java.awt.Color(187, 187, 186));
-        Mascotas4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Mascotas4.setText("Productos");
-        Mascotas4.setToolTipText("");
-        Mascotas4.setAlignmentX(0.5F);
-        Mascotas4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Mascotas4.setEnabled(false);
-        Mascotas4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Mascotas4.setPreferredSize(new java.awt.Dimension(79, 46));
-        Mascotas4.setRequestFocusEnabled(false);
+        Productos.setFont(new java.awt.Font("Fira Code", 0, 24)); // NOI18N
+        Productos.setForeground(new java.awt.Color(187, 187, 186));
+        Productos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Productos.setText("Productos");
+        Productos.setToolTipText("");
+        Productos.setAlignmentX(0.5F);
+        Productos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Productos.setEnabled(false);
+        Productos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Productos.setPreferredSize(new java.awt.Dimension(79, 46));
+        Productos.setRequestFocusEnabled(false);
+        Productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProductosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
@@ -144,10 +197,10 @@ public class UIDashboard extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Mascotas3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Mascotas1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dueños, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Mascotas2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Mascotas4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Mascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Personal, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelMenuLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -161,13 +214,13 @@ public class UIDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(Mascotas3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(Mascotas1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Dueños, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(Mascotas2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(Mascotas4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(Mascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Personal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94))
         );
 
@@ -219,6 +272,22 @@ public class UIDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void DueñosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DueñosMouseClicked
+        setPanelDueños();
+    }//GEN-LAST:event_DueñosMouseClicked
+
+    private void Mascotas3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Mascotas3MouseClicked
+        setPanelMascotas();
+    }//GEN-LAST:event_Mascotas3MouseClicked
+
+    private void ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductosMouseClicked
+        setPanelProductos();
+    }//GEN-LAST:event_ProductosMouseClicked
+
+    private void PersonalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PersonalMouseClicked
+        setPanelPersonal();
+    }//GEN-LAST:event_PersonalMouseClicked
+
     /*    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
@@ -229,11 +298,11 @@ public class UIDashboard extends javax.swing.JFrame {
     }
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Mascotas;
-    private javax.swing.JLabel Mascotas1;
+    private javax.swing.JLabel Dueños;
     private javax.swing.JLabel Mascotas2;
     private javax.swing.JLabel Mascotas3;
-    private javax.swing.JLabel Mascotas4;
+    private javax.swing.JLabel Personal;
+    private javax.swing.JLabel Productos;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jblFondo;
     private javax.swing.JPanel panelContenedor;

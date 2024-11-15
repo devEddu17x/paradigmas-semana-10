@@ -4,25 +4,24 @@
  */
 package presentacion;
 
-import control.MascotasControlador;
-import entidades.Mascota;
+import control.UsuariosControlador;
+import entidades.Dueño;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import presentacion.añadir.UIAñadirMascota;
+import presentacion.añadir.UIAñadirDueño;
 
 /**
  *
  * @author edu
  */
-public class PanelMascotas extends javax.swing.JPanel {
+public class PanelDueños extends javax.swing.JPanel {
 
     DefaultTableModel tm = new DefaultTableModel();
 
-    public PanelMascotas() {
-        System.out.println("Se ha creado un nuevo panel de mascotas");
+    public PanelDueños() {
         initComponents();
         panelContenidoMascotas.setOpaque(false);
-        String columnas[] = {"N° Expediente", "Nombre", "Especie", "Nacimiento", "Dueño [DNI]"};
+        String columnas[] = {"DNI", "Nombre", "A. Paterno", "A. Materno", "Telefono", "Direccion"};
         tm.setColumnIdentifiers(columnas);
         tbMascotas.setModel(tm);
         // tm.addRow(new Object[]{2, "Lazy", "Perro", "hoy", "Eddu"}); // añadir
@@ -32,10 +31,9 @@ public class PanelMascotas extends javax.swing.JPanel {
     }
 
     private void llenarTabla() { // este codigo es un asco pero es solo para saber como llenar el resto y como fucionan las tablas, sha bro ;v
-
-        List<Mascota> mascotas = MascotasControlador.getMascotas();
-        for (Mascota m : mascotas) {
-            tm.addRow(new Object[]{m.getNumeroExpediente(), m.getNombre(), m.getEspecie(), m.getNacimiento(), m.getDueño().getDni()});
+        List<Dueño> dueños = UsuariosControlador.getDueños();
+        for (Dueño d : dueños) {
+            tm.addRow(new Object[]{d.getDni(), d.getNombre(), d.getApellidoP(), d.getApellidoM(), d.getTelefono(), d.getDireccion()});
         }
     }
 
@@ -126,8 +124,8 @@ public class PanelMascotas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        UIAñadirMascota añadirMascota = new UIAñadirMascota();
-        añadirMascota.setVisible(true);
+        UIAñadirDueño añadirDueño = new UIAñadirDueño();
+        añadirDueño.setVisible(true);
     }//GEN-LAST:event_btnAñadirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

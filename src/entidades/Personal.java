@@ -1,19 +1,19 @@
 package entidades;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Personal {
+public class Personal extends Persona {
 
     private String cargo;
     private List<String> tareas;
     private String horario;
     private double nomina;
 
-    public Personal(String cargo, ArrayList<String> tareas, String horario) {
+    public Personal(String cargo, String horario, double nomina, String nombre, String apellidoP, String apellidoM) {
+        super(nombre, apellidoP, apellidoM);
         this.cargo = cargo;
-        this.tareas = tareas;
         this.horario = horario;
+        this.nomina = nomina;
     }
 
     public void setCargo(String cargo) {
